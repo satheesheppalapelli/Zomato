@@ -8,7 +8,7 @@ import logging
 class Zomato():
 
     def get_data(self):
-        logging.basicConfig(level=logging.DEBUG, filename='logfile.log', filemode='a', format("%(asctime)s-%(name)s-%(levelname)s-%(message)s"))
+        logging.basicConfig(level=logging.DEBUG, filename='logfile.log', filemode='a', format=("%(asctime)s-%(name)s-%(levelname)s-%(message)s"))
         try:
             headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 '
                                      '(KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
