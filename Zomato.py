@@ -24,12 +24,12 @@ class Zomato():
                 dataframe["Resturant_Name"] = (tr.find("a", {"data-result-type": "ResCard_Name"})).text.replace('\n', ' ')
                 dataframe["Resturant_Address"] = (
                     tr.find("div", {"class": "col-m-16 search-result-address grey-text nowrap ln22"})).text.replace('\n', ' ')
+                dataframe["Timings"] = (tr.find('div', {"class": "col-s-11 col-m-12 pl0 search-grid-right-text"})).text.strip()
                 dataframe["Rating"] = (tr.find('div', {"data-variation": "mini inverted"})).text.replace('/n', ' ').strip()
                 list_rest.append(dataframe)
 
             df = pd.DataFrame(list_rest)
             # df.to_csv("zomato_res.csv", index=False)
-
             df.to_excel('zomato.xlsx')
             return list_rest
         except Exception as error:
